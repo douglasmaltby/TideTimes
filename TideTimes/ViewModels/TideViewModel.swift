@@ -43,6 +43,7 @@ class TideViewModel {
         
         isLoading = true
         error = nil
+        tideData = nil
         
         do {
             print("Fetching tide data for: \(location.name)")

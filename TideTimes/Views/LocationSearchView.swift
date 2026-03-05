@@ -8,19 +8,31 @@ struct LocationSearchView: View {
     @State private var isSearching = false
     let viewModel: TideViewModel
     
+    struct SuggestedLocation: Identifiable {
+        var id: String { name }
+        let name: String
+        let location: Location?
+        
+        init(_ name: String, location: Location? = nil) {
+            self.name = name
+            self.location = location
+        }
+    }
+    
     // Popular coastal locations to show by default
-    private let suggestedLocations = [
-        "San Francisco Harbor",
-        "Miami Beach",
-        "Boston Harbor",
-        "Seattle Waterfront",
-        "San Diego Bay",
-        "Long Beach Harbor",
-        "Charleston Harbor",
-        "Virginia Beach",
-        "Portland Harbor",
-        "Galveston Bay",
-        "Ha Long"
+    private let suggestedLocations: [SuggestedLocation] = [
+        SuggestedLocation("Ha Long, Vietnam", location: Location(name: "Ha Long, Vietnam", latitude: 20.9506903, longitude: 107.074347, isLikelyCoastal: true)),
+        SuggestedLocation("Hai Phong, Vietnam", location: Location(name: "Hai Phong, Vietnam", latitude: 20.865139, longitude: 106.683830, isLikelyCoastal: true)),
+        SuggestedLocation("San Francisco Harbor"),
+        SuggestedLocation("Miami Beach"),
+        SuggestedLocation("Boston Harbor"),
+        SuggestedLocation("Seattle Waterfront"),
+        SuggestedLocation("San Diego Bay"),
+        SuggestedLocation("Long Beach Harbor"),
+        SuggestedLocation("Charleston Harbor"),
+        SuggestedLocation("Virginia Beach"),
+        SuggestedLocation("Portland Harbor"),
+        SuggestedLocation("Galveston Bay")
     ]
     
     // Expanded coastal keywords for better matching
@@ -41,29 +53,63 @@ struct LocationSearchView: View {
         NavigationStack {
             List {
                 if isSearching {
-                    ProgressView("Searching locations...")
+                    HStack {
+                        Spacer()
+                        ProgressView("Searching locations...")
+                            .padding()
+                        Spacer()
+                    }
+                    .listRowBackground(Color.clear)
                 } else if searchResults.isEmpty && !searchText.isEmpty {
                     ContentUnavailableView {
                         Label("No Coastal Locations Found", systemImage: "mappin.slash")
                     } description: {
                         Text("Try searching for a harbor, beach, or coastal city")
                     }
+                    .listRowBackground(Color.clear)
                 } else if searchResults.isEmpty {
-                    Section("Suggested Locations") {
-                        ForEach(suggestedLocations, id: \.self) { suggestion in
+                    Section {
+                        ForEach(suggestedLocations, id: \.name) { suggestion in
                             Button {
-                                searchText = suggestion
-                                Task {
-                                    await searchLocation(query: suggestion)
+                                if let customLocation = suggestion.location {
+                                    // Use our exact coordinates to guarantee the search target
+                                    viewModel.currentLocation = customLocation
+                                    Task {
+                                        await viewModel.fetchTideData()
+                                    }
+                                    dismiss()
+                                } else {
+                                    // Normal search fallback
+                                    searchText = suggestion.name
+                                    Task {
+                                        await searchLocation(query: suggestion.name)
+                                    }
                                 }
                             } label: {
-                                Label(suggestion, systemImage: "mappin.circle.fill")
-                                    .foregroundStyle(.primary)
+                                HStack(spacing: 16) {
+                                    Image(systemName: "mappin.circle.fill")
+                                        .font(.title2)
+                                        .foregroundStyle(.gray)
+                                        .frame(width: 32)
+                                    Text(suggestion.name)
+                                        .font(.body.weight(.medium))
+                                        .foregroundStyle(.primary)
+                                    Spacer()
+                                    Image(systemName: "magnifyingglass")
+                                        .font(.caption.weight(.bold))
+                                        .foregroundStyle(.tertiary)
+                                }
+                                .padding(.vertical, 4)
                             }
                         }
+                    } header: {
+                        Text("Popular Locations")
+                            .font(.headline)
+                            .textCase(nil)
+                            .foregroundStyle(.primary)
                     }
                 } else {
-                    Section("Search Results") {
+                    Section {
                         ForEach(searchResults) { location in
                             Button {
                                 viewModel.currentLocation = location
@@ -72,25 +118,34 @@ struct LocationSearchView: View {
                                 }
                                 dismiss()
                             } label: {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    HStack {
+                                HStack(spacing: 16) {
+                                    Image(systemName: location.isLikelyCoastal ? "water.waves" : "mappin.circle.fill")
+                                        .font(.title2)
+                                        .foregroundStyle(location.isLikelyCoastal ? .blue : .gray)
+                                        .frame(width: 32)
+                                    
+                                    VStack(alignment: .leading, spacing: 4) {
                                         Text(location.name)
-                                            .font(.headline)
+                                            .font(.body.weight(.medium))
                                             .foregroundStyle(.primary)
                                         
-                                        if location.isLikelyCoastal {
-                                            Image(systemName: "water.waves")
-                                                .foregroundStyle(.blue)
-                                        }
+                                        Text(location.coordinateString)
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
                                     }
-                                    
-                                    Text(location.coordinateString)
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption.weight(.bold))
+                                        .foregroundStyle(.tertiary)
                                 }
-                                .padding(.vertical, 4)
+                                .padding(.vertical, 8)
                             }
                         }
+                    } header: {
+                        Text("Search Results")
+                            .font(.headline)
+                            .textCase(nil)
+                            .foregroundStyle(.primary)
                     }
                 }
             }
@@ -98,6 +153,7 @@ struct LocationSearchView: View {
             .navigationBarTitleDisplayMode(.inline)
             .searchable(
                 text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
                 prompt: "Search for a coastal location"
             )
             .onChange(of: searchText) { _, newValue in

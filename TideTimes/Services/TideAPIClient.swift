@@ -11,6 +11,17 @@ struct NOAAError: Codable {
 
 class TideAPIClient {
     private let baseURL = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter"
+    
+    // Safely load the API key from a non-committed Secrets.plist file
+    private var worldTidesAPIKey: String {
+        guard let filePath = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
+              let plist = NSDictionary(contentsOfFile: filePath),
+              let key = plist["WorldTidesAPIKey"] as? String else {
+            print("WARNING: Secrets.plist not found or missing WorldTidesAPIKey. Tides will fail to load.")
+            return "YOUR_API_KEY_HERE"
+        }
+        return key
+    }
 
     // Cache stations to avoid repeated network calls
     private static var cachedStations: [NOAAStation]?
@@ -23,50 +34,122 @@ class TideAPIClient {
     }()
 
     func fetchTideData(latitude: Double, longitude: Double) async throws -> TideData {
-        // Find the nearest NOAA station
-        let station = try await findNearestStation(latitude: latitude, longitude: longitude)
-        print("Using station: \(station.id) - \(station.name)")
+        do {
+            // Find the nearest NOAA station
+            let station = try await findNearestStation(latitude: latitude, longitude: longitude)
+            print("Using station: \(station.id) - \(station.name)")
 
-        let today = Self.apiDateFormatter.string(from: Date())
-        let tomorrow = Self.apiDateFormatter.string(from: Date().addingTimeInterval(24 * 60 * 60))
+            let today = Self.apiDateFormatter.string(from: Date())
+            let tomorrow = Self.apiDateFormatter.string(from: Date().addingTimeInterval(24 * 60 * 60))
 
-        var components = URLComponents(string: baseURL)
+            var components = URLComponents(string: baseURL)
+            components?.queryItems = [
+                URLQueryItem(name: "product", value: "predictions"),
+                URLQueryItem(name: "application", value: "TideTimes"),
+                URLQueryItem(name: "begin_date", value: today),
+                URLQueryItem(name: "end_date", value: tomorrow),
+                URLQueryItem(name: "datum", value: "MLLW"),
+                URLQueryItem(name: "station", value: station.id),
+                URLQueryItem(name: "time_zone", value: "lst"),
+                URLQueryItem(name: "units", value: "english"),
+                URLQueryItem(name: "interval", value: "hilo"),  // Get only high and low tide predictions
+                URLQueryItem(name: "format", value: "json"),
+            ]
+
+            guard let url = components?.url else {
+                throw URLError(.badURL)
+            }
+
+            print("Requesting URL: \(url)")
+            let (data, response) = try await URLSession.shared.data(from: url)
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("Response status code: \(httpResponse.statusCode)")
+            }
+
+            // Print raw response for debugging
+            if let jsonString = String(data: data, encoding: .utf8) {
+                print("Raw tide response: \(jsonString)")
+            }
+
+            // Try to decode the response
+            return try JSONDecoder().decode(TideData.self, from: data)
+            
+        } catch {
+            print("NOAA API failed: \(error.localizedDescription). Falling back to WorldTides API...")
+            return try await fetchWorldTidesData(latitude: latitude, longitude: longitude)
+        }
+    }
+    
+    private func fetchWorldTidesData(latitude: Double, longitude: Double) async throws -> TideData {
+        let today = Date()
+        let tomorrow = today.addingTimeInterval(24 * 60 * 60)
+        
+        var components = URLComponents(string: "https://www.worldtides.info/api/v3")
         components?.queryItems = [
-            URLQueryItem(name: "product", value: "predictions"),
-            URLQueryItem(name: "application", value: "TideTimes"),
-            URLQueryItem(name: "begin_date", value: today),
-            URLQueryItem(name: "end_date", value: tomorrow),
-            URLQueryItem(name: "datum", value: "MLLW"),
-            URLQueryItem(name: "station", value: station.id),
-            URLQueryItem(name: "time_zone", value: "lst"),
-            URLQueryItem(name: "units", value: "english"),
-            URLQueryItem(name: "interval", value: "hilo"),  // Get only high and low tide predictions
-            URLQueryItem(name: "format", value: "json"),
+            URLQueryItem(name: "extremes", value: ""),
+            URLQueryItem(name: "heights", value: ""),
+            URLQueryItem(name: "step", value: "3600"), // Every hour
+            URLQueryItem(name: "lat", value: String(latitude)),
+            URLQueryItem(name: "lon", value: String(longitude)),
+            URLQueryItem(name: "key", value: self.worldTidesAPIKey)
         ]
-
+        
         guard let url = components?.url else {
             throw URLError(.badURL)
         }
-
-        print("Requesting URL: \(url)")
+        
+        print("Requesting WorldTides URL: \(url)")
         let (data, response) = try await URLSession.shared.data(from: url)
-
-        if let httpResponse = response as? HTTPURLResponse {
-            print("Response status code: \(httpResponse.statusCode)")
+        
+        if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+            throw URLError(.badServerResponse)
         }
-
-        // Print raw response for debugging
-        if let jsonString = String(data: data, encoding: .utf8) {
-            print("Raw tide response: \(jsonString)")
+        
+        let worldTidesResponse = try JSONDecoder().decode(WorldTidesResponse.self, from: data)
+        if let apiError = worldTidesResponse.error {
+             throw NSError(domain: "WorldTidesAPI", code: -1, userInfo: [NSLocalizedDescriptionKey: apiError])
         }
-
-        // Try to decode the response
-        do {
-            return try JSONDecoder().decode(TideData.self, from: data)
-        } catch {
-            print("Decoding error: \(error)")
-            throw error
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        var predictions: [TidePrediction] = []
+        let metersToFeet = 3.28084
+        let startOfDay = Calendar.current.startOfDay(for: today)
+        
+        if let extremes = worldTidesResponse.extremes {
+            for extreme in extremes {
+                let date = Date(timeIntervalSince1970: extreme.dt)
+                if date >= startOfDay && date <= tomorrow {
+                    let type = extreme.type.lowercased() == "high" ? "H" : "L"
+                    let heightInFeet = extreme.height * metersToFeet
+                    predictions.append(TidePrediction(
+                        t: formatter.string(from: date),
+                        v: String(heightInFeet),
+                        type: type
+                    ))
+                }
+            }
         }
+        
+        if let heights = worldTidesResponse.heights {
+            for heightInfo in heights {
+                let date = Date(timeIntervalSince1970: heightInfo.dt)
+                if date >= startOfDay && date <= tomorrow {
+                    let heightInFeet = heightInfo.height * metersToFeet
+                    predictions.append(TidePrediction(
+                        t: formatter.string(from: date),
+                        v: String(heightInFeet),
+                        type: nil
+                    ))
+                }
+            }
+        }
+        
+        predictions.sort { $0.date < $1.date }
+        
+        return TideData(predictions: predictions)
     }
 
     private func findNearestStation(latitude: Double, longitude: Double) async throws -> NOAAStation

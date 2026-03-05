@@ -17,26 +17,61 @@ struct ContentView: View {
                 if let tideData = viewModel.tideData {
                     TideGraphView(tideData: tideData)
                 } else if viewModel.isLoading {
-                    ProgressView("Loading tide data...")
-                        .controlSize(.large)
+                    VStack(spacing: 16) {
+                        ProgressView()
+                            .scaleEffect(1.5)
+                            .tint(.blue)
+                        Text("Fetching tide heights...")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .transition(.opacity.animation(.easeInOut))
                 } else if let error = viewModel.error {
                     ContentUnavailableView {
-                        Label("Error Loading Data", systemImage: "exclamationmark.triangle")
+                        Label("Cannot Load Tides", systemImage: "wifi.slash")
+                            .symbolEffect(.pulse)
                     } description: {
                         Text(error.localizedDescription)
+                            .font(.callout)
                     } actions: {
-                        Button("Try Again") {
+                        Button {
                             Task {
                                 await viewModel.fetchTideData()
                             }
+                        } label: {
+                            Text("Try Again")
+                                .fontWeight(.semibold)
                         }
-                        .buttonStyle(.bordered)
+                        .buttonStyle(.borderedProminent)
+                        .tint(.blue)
+                        .controlSize(.regular)
                     }
                 } else {
                     ContentUnavailableView {
-                        Label("Select a Location", systemImage: "mappin.and.ellipse")
+                        Label {
+                            Text("Select a Location")
+                                .font(.title3.bold())
+                        } icon: {
+                            Image(systemName: "water.waves")
+                                .font(.system(size: 48))
+                                .foregroundStyle(
+                                    .linearGradient(colors: [.blue, .cyan], startPoint: .topLeading, endPoint: .bottomTrailing)
+                                )
+                                .padding(.bottom, 8)
+                        }
                     } description: {
-                        Text("Choose a location to view tide information")
+                        Text("Choose a coastal location to view current tide predictions and graphs.")
+                            .foregroundStyle(.secondary)
+                    } actions: {
+                        Button {
+                            showingLocationSearch = true
+                        } label: {
+                            Text("Search Locations")
+                                .fontWeight(.semibold)
+                        }
+                        .buttonStyle(.bordered)
+                        .controlSize(.regular)
                     }
                 }
             }

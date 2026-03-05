@@ -10,33 +10,55 @@ struct TideTimesSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("High & Low Tides")
-                .font(.headline)
+                .font(.title2.bold())
                 .padding(.horizontal)
-                .frame(height: 44)
+                .padding(.top, 8)
             
             LazyVGrid(columns: [
-                GridItem(.flexible(), spacing: 20),
-                GridItem(.flexible(), spacing: 20)
-            ], spacing: 20) {
+                GridItem(.flexible(), spacing: 16),
+                GridItem(.flexible(), spacing: 16)
+            ], spacing: 16) {
                 ForEach(filteredPredictions) { prediction in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(tideTypeString(prediction.type))
-                            .font(.subheadline)
-                            .fontWeight(.medium)
-                            .foregroundStyle(.secondary)
+                    let isHighTide = prediction.type?.lowercased() == "h"
+                    
+                    VStack(alignment: .leading, spacing: 12) {
+                        HStack {
+                            Label {
+                                Text(isHighTide ? "High Tide" : "Low Tide")
+                                    .font(.subheadline.weight(.semibold))
+                            } icon: {
+                                Image(systemName: isHighTide ? "arrow.up.circle.fill" : "arrow.down.circle.fill")
+                                    .foregroundStyle(isHighTide ? .blue : .teal)
+                            }
+                            Spacer()
+                        }
                         
-                        Text(timeString(from: prediction.date))
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.primary)
-                        
-                        Text(String(format: "%.1f ft", prediction.height))
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(timeString(from: prediction.date))
+                                .font(.system(.title3, design: .rounded).weight(.bold))
+                                .foregroundStyle(.primary)
+                            
+                            HStack(alignment: .firstTextBaseline, spacing: 4) {
+                                Text(String(format: "%.1f", prediction.height))
+                                    .font(.system(.title3, design: .rounded).weight(.semibold))
+                                    .foregroundStyle(isHighTide ? .blue : .teal)
+                                Text("ft")
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
                     }
-                    .padding(12)
+                    .padding(16)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Color(.secondarySystemBackground))
-                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    .background(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(Color(.secondarySystemBackground))
+                    )
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .strokeBorder(.black.opacity(0.05), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
                 }
             }
             .padding(.horizontal)
