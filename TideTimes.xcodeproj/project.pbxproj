@@ -6,7 +6,46 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E97D31632F67CBC0002B26C6 /* TideTimesWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E97D31622F67CBC0002B26C6 /* TideTimesWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		E97D314D2F67CBBF002B26C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97D313F2F67CBBF002B26C6;
+			remoteInfo = TideTimesWatch;
+		};
+		E97D31572F67CBBF002B26C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97D313F2F67CBBF002B26C6;
+			remoteInfo = TideTimesWatch;
+		};
+		E97D31642F67CBC0002B26C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97D31612F67CBC0002B26C6;
+			remoteInfo = "TideTimesWatch Watch App";
+		};
+		E97D31722F67CBC0002B26C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97D31612F67CBC0002B26C6;
+			remoteInfo = "TideTimesWatch Watch App";
+		};
+		E97D317C2F67CBC1002B26C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E97D31612F67CBC0002B26C6;
+			remoteInfo = "TideTimesWatch Watch App";
+		};
 		E9C51E372D3DF61300B2446C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E9C51E1E2D3DF61300B2446C /* Project object */;
@@ -23,13 +62,63 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E97D31852F67CBC1002B26C6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				E97D31632F67CBC0002B26C6 /* TideTimesWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E97D31402F67CBBF002B26C6 /* TideTimesWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideTimesWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D314C2F67CBBF002B26C6 /* TideTimesWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideTimesWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D31562F67CBBF002B26C6 /* TideTimesWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideTimesWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D31622F67CBC0002B26C6 /* TideTimesWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TideTimesWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D31712F67CBC0002B26C6 /* TideTimesWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TideTimesWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D317B2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TideTimesWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C51E262D3DF61300B2446C /* TideTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TideTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C51E362D3DF61300B2446C /* TideTimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideTimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C51E402D3DF61300B2446C /* TideTimesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TideTimesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		E97D31412F67CBBF002B26C6 /* TideTimesWatch */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TideTimesWatch;
+			sourceTree = "<group>";
+		};
+		E97D314F2F67CBBF002B26C6 /* TideTimesWatchTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TideTimesWatchTests;
+			sourceTree = "<group>";
+		};
+		E97D31592F67CBBF002B26C6 /* TideTimesWatchUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TideTimesWatchUITests;
+			sourceTree = "<group>";
+		};
+		E97D31662F67CBC0002B26C6 /* TideTimesWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TideTimesWatch Watch App";
+			sourceTree = "<group>";
+		};
+		E97D31742F67CBC0002B26C6 /* TideTimesWatch Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TideTimesWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		E97D317E2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TideTimesWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
 		E9C51E282D3DF61300B2446C /* TideTimes */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = TideTimes;
@@ -48,6 +137,48 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E97D313D2F67CBBF002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31492F67CBBF002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31532F67CBBF002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D315F2F67CBC0002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D316E2F67CBC0002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31782F67CBC1002B26C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9C51E232D3DF61300B2446C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -78,6 +209,12 @@
 				E9C51E282D3DF61300B2446C /* TideTimes */,
 				E9C51E392D3DF61300B2446C /* TideTimesTests */,
 				E9C51E432D3DF61300B2446C /* TideTimesUITests */,
+				E97D31412F67CBBF002B26C6 /* TideTimesWatch */,
+				E97D314F2F67CBBF002B26C6 /* TideTimesWatchTests */,
+				E97D31592F67CBBF002B26C6 /* TideTimesWatchUITests */,
+				E97D31662F67CBC0002B26C6 /* TideTimesWatch Watch App */,
+				E97D31742F67CBC0002B26C6 /* TideTimesWatch Watch AppTests */,
+				E97D317E2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests */,
 				E9C51E272D3DF61300B2446C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +225,12 @@
 				E9C51E262D3DF61300B2446C /* TideTimes.app */,
 				E9C51E362D3DF61300B2446C /* TideTimesTests.xctest */,
 				E9C51E402D3DF61300B2446C /* TideTimesUITests.xctest */,
+				E97D31402F67CBBF002B26C6 /* TideTimesWatch.app */,
+				E97D314C2F67CBBF002B26C6 /* TideTimesWatchTests.xctest */,
+				E97D31562F67CBBF002B26C6 /* TideTimesWatchUITests.xctest */,
+				E97D31622F67CBC0002B26C6 /* TideTimesWatch Watch App.app */,
+				E97D31712F67CBC0002B26C6 /* TideTimesWatch Watch AppTests.xctest */,
+				E97D317B2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +238,132 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E97D313F2F67CBBF002B26C6 /* TideTimesWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31912F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch" */;
+			buildPhases = (
+				E97D313C2F67CBBF002B26C6 /* Sources */,
+				E97D313D2F67CBBF002B26C6 /* Frameworks */,
+				E97D313E2F67CBBF002B26C6 /* Resources */,
+				E97D31852F67CBC1002B26C6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E97D31652F67CBC0002B26C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E97D31412F67CBBF002B26C6 /* TideTimesWatch */,
+			);
+			name = TideTimesWatch;
+			productName = TideTimesWatch;
+			productReference = E97D31402F67CBBF002B26C6 /* TideTimesWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E97D314B2F67CBBF002B26C6 /* TideTimesWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31922F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatchTests" */;
+			buildPhases = (
+				E97D31482F67CBBF002B26C6 /* Sources */,
+				E97D31492F67CBBF002B26C6 /* Frameworks */,
+				E97D314A2F67CBBF002B26C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E97D314E2F67CBBF002B26C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E97D314F2F67CBBF002B26C6 /* TideTimesWatchTests */,
+			);
+			name = TideTimesWatchTests;
+			productName = TideTimesWatchTests;
+			productReference = E97D314C2F67CBBF002B26C6 /* TideTimesWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E97D31552F67CBBF002B26C6 /* TideTimesWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31932F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatchUITests" */;
+			buildPhases = (
+				E97D31522F67CBBF002B26C6 /* Sources */,
+				E97D31532F67CBBF002B26C6 /* Frameworks */,
+				E97D31542F67CBBF002B26C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E97D31582F67CBBF002B26C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E97D31592F67CBBF002B26C6 /* TideTimesWatchUITests */,
+			);
+			name = TideTimesWatchUITests;
+			productName = TideTimesWatchUITests;
+			productReference = E97D31562F67CBBF002B26C6 /* TideTimesWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E97D31612F67CBC0002B26C6 /* TideTimesWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31902F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch App" */;
+			buildPhases = (
+				E97D315E2F67CBC0002B26C6 /* Sources */,
+				E97D315F2F67CBC0002B26C6 /* Frameworks */,
+				E97D31602F67CBC0002B26C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E97D31662F67CBC0002B26C6 /* TideTimesWatch Watch App */,
+			);
+			name = "TideTimesWatch Watch App";
+			productName = "TideTimesWatch Watch App";
+			productReference = E97D31622F67CBC0002B26C6 /* TideTimesWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E97D31702F67CBC0002B26C6 /* TideTimesWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31942F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch AppTests" */;
+			buildPhases = (
+				E97D316D2F67CBC0002B26C6 /* Sources */,
+				E97D316E2F67CBC0002B26C6 /* Frameworks */,
+				E97D316F2F67CBC0002B26C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E97D31732F67CBC0002B26C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E97D31742F67CBC0002B26C6 /* TideTimesWatch Watch AppTests */,
+			);
+			name = "TideTimesWatch Watch AppTests";
+			productName = "TideTimesWatch Watch AppTests";
+			productReference = E97D31712F67CBC0002B26C6 /* TideTimesWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E97D317A2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E97D31952F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch AppUITests" */;
+			buildPhases = (
+				E97D31772F67CBC1002B26C6 /* Sources */,
+				E97D31782F67CBC1002B26C6 /* Frameworks */,
+				E97D31792F67CBC1002B26C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E97D317D2F67CBC1002B26C6 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				E97D317E2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests */,
+			);
+			name = "TideTimesWatch Watch AppUITests";
+			productName = "TideTimesWatch Watch AppUITests";
+			productReference = E97D317B2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E9C51E252D3DF61300B2446C /* TideTimes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9C51E4A2D3DF61300B2446C /* Build configuration list for PBXNativeTarget "TideTimes" */;
@@ -111,8 +380,6 @@
 				E9C51E282D3DF61300B2446C /* TideTimes */,
 			);
 			name = TideTimes;
-			packageProductDependencies = (
-			);
 			productName = TideTimes;
 			productReference = E9C51E262D3DF61300B2446C /* TideTimes.app */;
 			productType = "com.apple.product-type.application";
@@ -134,8 +401,6 @@
 				E9C51E392D3DF61300B2446C /* TideTimesTests */,
 			);
 			name = TideTimesTests;
-			packageProductDependencies = (
-			);
 			productName = TideTimesTests;
 			productReference = E9C51E362D3DF61300B2446C /* TideTimesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -157,8 +422,6 @@
 				E9C51E432D3DF61300B2446C /* TideTimesUITests */,
 			);
 			name = TideTimesUITests;
-			packageProductDependencies = (
-			);
 			productName = TideTimesUITests;
 			productReference = E9C51E402D3DF61300B2446C /* TideTimesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -170,9 +433,31 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
+				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
+					E97D313F2F67CBBF002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					E97D314B2F67CBBF002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E97D313F2F67CBBF002B26C6;
+					};
+					E97D31552F67CBBF002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E97D313F2F67CBBF002B26C6;
+					};
+					E97D31612F67CBC0002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					E97D31702F67CBC0002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E97D31612F67CBC0002B26C6;
+					};
+					E97D317A2F67CBC1002B26C6 = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = E97D31612F67CBC0002B26C6;
+					};
 					E9C51E252D3DF61300B2446C = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -203,11 +488,59 @@
 				E9C51E252D3DF61300B2446C /* TideTimes */,
 				E9C51E352D3DF61300B2446C /* TideTimesTests */,
 				E9C51E3F2D3DF61300B2446C /* TideTimesUITests */,
+				E97D313F2F67CBBF002B26C6 /* TideTimesWatch */,
+				E97D314B2F67CBBF002B26C6 /* TideTimesWatchTests */,
+				E97D31552F67CBBF002B26C6 /* TideTimesWatchUITests */,
+				E97D31612F67CBC0002B26C6 /* TideTimesWatch Watch App */,
+				E97D31702F67CBC0002B26C6 /* TideTimesWatch Watch AppTests */,
+				E97D317A2F67CBC1002B26C6 /* TideTimesWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E97D313E2F67CBBF002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D314A2F67CBBF002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31542F67CBBF002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31602F67CBC0002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D316F2F67CBC0002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31792F67CBC1002B26C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9C51E242D3DF61300B2446C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,6 +565,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E97D313C2F67CBBF002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31482F67CBBF002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31522F67CBBF002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D315E2F67CBC0002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D316D2F67CBC0002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E97D31772F67CBC1002B26C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E9C51E222D3DF61300B2446C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +631,31 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E97D314E2F67CBBF002B26C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97D313F2F67CBBF002B26C6 /* TideTimesWatch */;
+			targetProxy = E97D314D2F67CBBF002B26C6 /* PBXContainerItemProxy */;
+		};
+		E97D31582F67CBBF002B26C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97D313F2F67CBBF002B26C6 /* TideTimesWatch */;
+			targetProxy = E97D31572F67CBBF002B26C6 /* PBXContainerItemProxy */;
+		};
+		E97D31652F67CBC0002B26C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97D31612F67CBC0002B26C6 /* TideTimesWatch Watch App */;
+			targetProxy = E97D31642F67CBC0002B26C6 /* PBXContainerItemProxy */;
+		};
+		E97D31732F67CBC0002B26C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97D31612F67CBC0002B26C6 /* TideTimesWatch Watch App */;
+			targetProxy = E97D31722F67CBC0002B26C6 /* PBXContainerItemProxy */;
+		};
+		E97D317D2F67CBC1002B26C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E97D31612F67CBC0002B26C6 /* TideTimesWatch Watch App */;
+			targetProxy = E97D317C2F67CBC1002B26C6 /* PBXContainerItemProxy */;
+		};
 		E9C51E382D3DF61300B2446C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E9C51E252D3DF61300B2446C /* TideTimes */;
@@ -269,6 +669,316 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E97D31832F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TideTimesWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E97D31842F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TideTimesWatch;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E97D31862F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TideTimesWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TideTimesWatch";
+			};
+			name = Debug;
+		};
+		E97D31872F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TideTimesWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TideTimesWatch";
+			};
+			name = Release;
+		};
+		E97D31882F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TideTimesWatch;
+			};
+			name = Debug;
+		};
+		E97D31892F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TideTimesWatch;
+			};
+			name = Release;
+		};
+		E97D318A2F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TideTimesWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.dougmaltby.TideTimesWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		E97D318B2F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = TideTimesWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.dougmaltby.TideTimesWatch;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dougmaltby.TideTimesWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		E97D318C2F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougmaltby.TideTimesWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TideTimesWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TideTimesWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		E97D318D2F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougmaltby.TideTimesWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TideTimesWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TideTimesWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		E97D318E2F67CBC1002B26C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougmaltby.TideTimesWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TideTimesWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		E97D318F2F67CBC1002B26C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 76485LK399;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dougmaltby.TideTimesWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "TideTimesWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 		E9C51E482D3DF61300B2446C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -523,6 +1233,60 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E97D31902F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D318A2F67CBC1002B26C6 /* Debug */,
+				E97D318B2F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E97D31912F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D31832F67CBC1002B26C6 /* Debug */,
+				E97D31842F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E97D31922F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D31862F67CBC1002B26C6 /* Debug */,
+				E97D31872F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E97D31932F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D31882F67CBC1002B26C6 /* Debug */,
+				E97D31892F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E97D31942F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D318C2F67CBC1002B26C6 /* Debug */,
+				E97D318D2F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E97D31952F67CBC1002B26C6 /* Build configuration list for PBXNativeTarget "TideTimesWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E97D318E2F67CBC1002B26C6 /* Debug */,
+				E97D318F2F67CBC1002B26C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E9C51E212D3DF61300B2446C /* Build configuration list for PBXProject "TideTimes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

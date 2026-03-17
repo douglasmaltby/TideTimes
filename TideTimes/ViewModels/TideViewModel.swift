@@ -10,6 +10,7 @@ class TideViewModel {
         didSet {
             if let location = currentLocation {
                 saveLocation(location)
+                WatchConnectivityManager.shared.sendLocation(location)
             }
         }
     }
