@@ -3,7 +3,7 @@
 //  TideTimes
 //
 //  Created by Douglas Maltby on 1/19/25.
-//
+//  Reverted to code before Gemma 4 experiment and misspellings on 4/2/26
 
 import SwiftUI
 

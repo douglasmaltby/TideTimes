@@ -1,0 +1,4 @@
+Create a new app icon
+Include the icon in the README.md file
+Cull the WARP.md and .vscode settings.json (if any value) for collecting a gist of these files for general use
+Add additional NOAA tide stations, as well as others in Asia: Bangkok, Phuket, Singapore, Hong Kong, Shanghai, Tokyo, Sydney, Auckland, Bali, Jakarta, Manila, Mumbai, Dubai, Rio de Janeiro, Buenos Aires, Brisbane, Perth, Melbourne, Adelaide, Hobart, Darwin, Cairns, Townsville, Mackay, Gladstone, Bundaberg, Hervey Bay, Gold Coast, Sunshine Coast, Byron Bay, Coffs Harbour, Port Macquarie, Newcastle, Wollongong, Geelong, Warrnambool, Portland, Albany, Esperance, Geraldton, Port Hedland, Broome, Derby, Wyndham, Kununurra, Darwin, Cairns, Townsville, Mackay, Gladstone, Bundaberg, Hervey Bay, Gold Coast, Sunshine Coast, Byron Bay, Coffs Harbour, Port Macquarie, Newcastle, Wollongong, Geelong, Warrnambool, Portland, Albany, Esperance, Geraldton, Port Hedland, Broome, Derby, Wyndham, Kununurra

@@ -8,37 +8,40 @@ import SwiftUI
 
 struct TideAppIconView: View {
     var body: some View {
-        ZStack {
-            // Ocean Gradient Background
-            LinearGradient(
-                colors: [Color.cyan, Color.blue.opacity(0.8), Color.indigo],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+        GeometryReader { proxy in
+            let w = proxy.size.width
+            let h = proxy.size.height
             
-            // Moon
-            Circle()
-                .fill(Color.white)
-                .frame(width: 250, height: 250)
-                .offset(x: -180, y: -220)
-                .shadow(color: .white.opacity(0.4), radius: 30)
+            ZStack {
+                // Ocean Gradient Background
+                LinearGradient(
+                    colors: [Color.cyan, Color.blue.opacity(0.8), Color.indigo],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                
+                // Moon
+                Circle()
+                    .fill(Color.white)
+                    .frame(width: w * 0.25, height: h * 0.25)
+                    .offset(x: -w * 0.18, y: -h * 0.22)
+                    .shadow(color: .white.opacity(0.4), radius: w * 0.03)
 
-            // Background Wave
-            WaveShape()
-                .fill(Color.white.opacity(0.3))
-                .frame(height: 500)
-                .offset(x: 100, y: 250)
-            
-            // Foreground Wave
-            WaveShape()
-                .fill(Color.white)
-                .frame(height: 500)
-                .offset(x: -50, y: 320)
+                // Background Wave
+                WaveShape()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(height: h * 0.5)
+                    .offset(x: w * 0.1, y: h * 0.25)
+                
+                // Foreground Wave
+                WaveShape()
+                    .fill(Color.white)
+                    .frame(height: h * 0.5)
+                    .offset(x: -w * 0.05, y: h * 0.31)
+            }
         }
-        .frame(width: 1024, height: 1024) // Standard Single-Scale Icon Size
-        // The clipShape is just to preview how it looks rounded.
-        // App Store icons should be submitted as square!
-        //.clipShape(RoundedRectangle(cornerRadius: 225, style: .continuous))
+        // Force the icon to remain a perfect square
+        .aspectRatio(1, contentMode: .fit)
     }
 }
 
@@ -64,4 +67,5 @@ struct WaveShape: Shape {
 
 #Preview {
     TideAppIconView()
+        .padding()
 }
