@@ -12,8 +12,6 @@ TideTimes is a beautifully designed, intuitive iOS and Apple Watch application t
 
 ## Screenshots
 
-*(Note: Replace the placeholder image paths below with the actual photos provided)*
-
 <div align="center">
   <figure style="display: inline-block; margin-right: 20px;">
     <img src="screenshots/iphone.png" alt="iPhone App" width="300"/>
