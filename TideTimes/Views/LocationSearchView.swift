@@ -23,16 +23,16 @@ struct LocationSearchView: View {
     private let suggestedLocations: [SuggestedLocation] = [
         SuggestedLocation("Ha Long, Vietnam", location: Location(name: "Ha Long, Vietnam", latitude: 20.9506903, longitude: 107.074347, isLikelyCoastal: true)),
         SuggestedLocation("Hai Phong, Vietnam", location: Location(name: "Hai Phong, Vietnam", latitude: 20.865139, longitude: 106.683830, isLikelyCoastal: true)),
-        SuggestedLocation("San Francisco Harbor"),
-        SuggestedLocation("Miami Beach"),
-        SuggestedLocation("Boston Harbor"),
-        SuggestedLocation("Seattle Waterfront"),
-        SuggestedLocation("San Diego Bay"),
-        SuggestedLocation("Long Beach Harbor"),
-        SuggestedLocation("Charleston Harbor"),
-        SuggestedLocation("Virginia Beach"),
-        SuggestedLocation("Portland Harbor"),
-        SuggestedLocation("Galveston Bay")
+        SuggestedLocation("San Francisco Harbor, CA"),
+        SuggestedLocation("Miami Beach, FL"),
+        SuggestedLocation("Boston Harbor, MA"),
+        SuggestedLocation("Seattle Waterfront, WA"),
+        SuggestedLocation("San Diego Bay, CA"),
+        SuggestedLocation("Long Beach Harbor, CA"),
+        SuggestedLocation("Charleston Harbor, SC"),
+        SuggestedLocation("Virginia Beach, VA"),
+        SuggestedLocation("Portland Harbor, OR"),
+        SuggestedLocation("Galveston Bay, TX")
     ]
     
     // Expanded coastal keywords for better matching
